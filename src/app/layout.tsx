@@ -12,6 +12,9 @@ import { Geist, Geist_Mono } from 'next/font/google';
 // Internal imports
 import AppSidebar from '@/components/AppSidebar';
 import Navbar from '@/components/Navbar';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
+
+// Styles
 import './globals.css';
 
 // Fonts
@@ -36,19 +39,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
-        suppressHydrationWarning
       >
-        <AppSidebar />
-        <main className="w-full">
-          <Navbar />
-          <div className="px-4">
-            {/* Page Content */}
-            {children}
-          </div>
-        </main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AppSidebar />
+          <main className="w-full">
+            <Navbar />
+            <div className="px-4">
+              {/* Page Content */}
+              {children}
+            </div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
