@@ -5,8 +5,8 @@
  * @copyright 2025 monayem_hossain_limon
  */
 
-const page = () => {
-  return <div></div>;
+const AppSidebar = () => {
+  return <div>AppSidebar</div>;
 };
 
-export default page;
+export default AppSidebar;

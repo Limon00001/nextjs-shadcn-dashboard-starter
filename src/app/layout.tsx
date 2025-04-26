@@ -1,7 +1,20 @@
+/**
+ * Author: Monayem Hossain Limon
+ * GitHub: https://github.com/Limon00001
+ * Date: 26 Apr, 2025
+ * @copyright 2025 monayem_hossain_limon
+ */
+
+// External imports
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+
+// Internal imports
+import AppSidebar from '@/components/AppSidebar';
+import Navbar from '@/components/Navbar';
 import './globals.css';
 
+// Fonts
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -25,10 +38,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
         suppressHydrationWarning
       >
-        {children}
+        <AppSidebar />
+        <main className="w-full">
+          <Navbar />
+          <div className="px-4">
+            {/* Page Content */}
+            {children}
+          </div>
+        </main>
       </body>
     </html>
   );
