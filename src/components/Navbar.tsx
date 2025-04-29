@@ -30,7 +30,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="p-4 flex items-center justify-between">
+    <nav className="p-4 flex items-center justify-between sticky top-0 z-50 bg-background  backdrop:backdrop-blur-sm shadow-md">
       {/* Left */}
       <SidebarTrigger />
       {/* Right */}
@@ -61,7 +61,7 @@ const Navbar = () => {
         <DropdownMenu>
           <DropdownMenuTrigger>
             <Avatar>
-              <AvatarImage src="./avatar.png" />
+              <AvatarImage src="/avatar.png" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
