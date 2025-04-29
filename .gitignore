@@ -29,7 +29,6 @@ TodoList.tsx
 Pagination.tsx
 EditUser.tsx
 CardList.tsx
-AppPieChart.tsx
 AppAreaChart.tsx
 AppActivityChart.tsx
 users/
